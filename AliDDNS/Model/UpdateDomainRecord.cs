@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AlibabaCloud.SDK.Alidns20150109;
 using AlibabaCloud.SDK.Alidns20150109.Models;
 using Tea;
+using Tea.Utils;
 
 namespace AliDDNS.Model
 {
@@ -42,6 +43,7 @@ namespace AliDDNS.Model
                 UpdateDomainRecordResponse updateDomainRecordResponse=client.UpdateDomainRecordWithOptions(updateDomainRecordRequest, runtime);
                 if (updateDomainRecordResponse.StatusCode == 200)
                 {
+                    Console.WriteLine(updateDomainRecordResponse.Body.ToSafeString());
                     return true;
                 }
                 else
@@ -52,7 +54,7 @@ namespace AliDDNS.Model
             }
             catch (TeaException error)
             {
-                AlibabaCloud.TeaUtil.Common.AssertAsString(error.Message);
+                Console.WriteLine(error.Message + "\n" + error.StackTrace);
             }
             catch (Exception _error)
             {

@@ -61,7 +61,7 @@ namespace AliDDNS.Core
                             //成功匹配
                             string RecordId=record.RecordId;
                             UpdateDomainRecord updateDomainRecord = new UpdateDomainRecord(workConf.accessKeyId, workConf.accessKeySecret,
-                                workConf.SubDomainName, RecordId,workConf.DomainName, Utils.NetUtils.getPublicIP());
+                                workConf.SubDomainName, workConf.DomainName,RecordId, Utils.NetUtils.getPublicIP());
                             if (updateDomainRecord.updateDomainRecord())
                             {
                                 Console.WriteLine(DateTime.Now.ToString() + "[Info]Update Success");
