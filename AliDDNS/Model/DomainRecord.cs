@@ -48,6 +48,19 @@ namespace AliDDNS.Model
             config.Endpoint = Endpoint;
         }
 
+        public DomainRecord(string accessKeyId, string accessKeySecret, string RR, string value, string domain,string recordType)
+        {
+            this.accessKeyId = accessKeyId;
+            this.accessKeySecret = accessKeySecret;
+            this.RR = RR;
+            this.value = value;
+            this.domain = domain;
+            this.recordType = recordType;
+            config.AccessKeyId = accessKeyId;
+            config.AccessKeySecret = accessKeySecret;
+            config.Endpoint = Endpoint;
+        }
+
         public DomainRecord(string accessKeyId, string accessKeySecret, string RR,string domain)
         {
             this.accessKeyId = accessKeyId;

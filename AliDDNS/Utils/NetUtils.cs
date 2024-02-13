@@ -29,5 +29,25 @@ namespace AliDDNS.Utils
                 return "获取IP地址失败，错误码:"+response.StatusCode;
             }
         }
+
+        /// <summary>
+        /// 获取当前PC IPv6地址
+        /// </summary>
+        /// <returns></returns>
+        public static string getIPv6Address()
+        {
+            HttpClient httpClient = new HttpClient();
+            var ApiAddress = "6.ipw.cn";
+            HttpResponseMessage response=httpClient.GetAsync(ApiAddress).Result;
+            if(response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsStringAsync().Result;
+            }
+            else
+            {
+                //HTTP访问状态码异常，返回错误代码
+                return "获取IP地址失败，错误码:" + response.StatusCode;
+            }
+        }
     }
 }

@@ -30,6 +30,11 @@ namespace AliDDNS.Model
             :base(accessKeyId,accessKeySecret,RR,value,domain) {
         }
 
+        public AddDomainRecord(string accessKeyId, string accessKeySecret, string RR, string value, string domain,string recordType)
+            : base(accessKeyId, accessKeySecret, RR, value, domain,recordType)
+        {
+        }
+
         public string addDomainRecord()
         {
             string returnMsg = "";

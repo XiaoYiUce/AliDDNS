@@ -22,7 +22,14 @@ namespace AliDDNS.Model
         {
             this.RecordId = RecordId;
 
-        } 
+        }
+
+        public UpdateDomainRecord(string accessKeyId, string accessKeySecret, string RR, string domain, string RecordId, string Value,string recordType)
+            : base(accessKeyId, accessKeySecret, RR, Value, domain,recordType)
+        {
+            this.RecordId = RecordId;
+
+        }
 
         public bool updateDomainRecord()
         {

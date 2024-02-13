@@ -23,8 +23,8 @@ namespace AliDDNS.Model
         /// <param name="accessKeySecret">阿里云accessKeySecret</param>
         /// <param name="RR">子域名前缀</param>
         /// <param name="domain">要查询的域名</param>
-        public DescribeDomainRecords(string accessKeyId, string accessKeySecret, string RR, string domain) :
-            base(accessKeyId, accessKeySecret, RR, domain)
+        public DescribeDomainRecords(string accessKeyId, string accessKeySecret, string RR, string domain,string recordType) :
+            base(accessKeyId, accessKeySecret, RR, domain,recordType)
         {
         }
 

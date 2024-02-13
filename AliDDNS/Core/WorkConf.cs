@@ -24,6 +24,8 @@ namespace AliDDNS.Core
         public string? SubDomainName { get; set; }
         [JsonIgnore]
         public string Name => $"{SubDomainName}.{DomainName}";
+        [JsonProperty]
+        public string? recordType {  get; set; }
 
         /// <summary>
         /// 从文件导入配置
@@ -43,6 +45,7 @@ namespace AliDDNS.Core
                     this.Interval = workConf.Interval;
                     this.DomainName = workConf.DomainName;
                     this.SubDomainName = workConf.SubDomainName;
+                    this.recordType = workConf.recordType;
                     return true;
                 }
                 else
